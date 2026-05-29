@@ -1,0 +1,88 @@
+import type { Transaction } from "../schemas";
+
+export const MOCK_TRANSACTIONS: Transaction[] = [
+  {
+    id: "txn_001",
+    amount: 29.99,
+    currency: "USD",
+    createdAt: "2026-05-28T14:22:00.000Z",
+    status: "success",
+  },
+  {
+    id: "txn_002",
+    amount: 149.0,
+    currency: "EUR",
+    createdAt: "2026-05-24T09:05:00.000Z",
+    status: "success",
+  },
+  {
+    id: "txn_003",
+    amount: 9.99,
+    currency: "USD",
+    createdAt: "2026-05-21T17:45:00.000Z",
+    status: "failed",
+  },
+  {
+    id: "txn_004",
+    amount: 79.5,
+    currency: "GBP",
+    createdAt: "2026-05-17T11:30:00.000Z",
+    status: "success",
+  },
+  {
+    id: "txn_005",
+    amount: 199.0,
+    currency: "EUR",
+    createdAt: "2026-05-12T08:00:00.000Z",
+    status: "success",
+  },
+  {
+    id: "txn_006",
+    amount: 49.99,
+    currency: "USD",
+    createdAt: "2026-05-07T20:15:00.000Z",
+    status: "failed",
+  },
+  {
+    id: "txn_007",
+    amount: 14.99,
+    currency: "EUR",
+    createdAt: "2026-04-29T13:00:00.000Z",
+    status: "success",
+  },
+  {
+    id: "txn_008",
+    amount: 299.0,
+    currency: "USD",
+    createdAt: "2026-04-21T06:50:00.000Z",
+    status: "failed",
+  },
+  {
+    id: "txn_009",
+    amount: 59.99,
+    currency: "GBP",
+    createdAt: "2026-04-14T16:20:00.000Z",
+    status: "success",
+  },
+  {
+    id: "txn_010",
+    amount: 24.99,
+    currency: "USD",
+    createdAt: "2026-04-04T10:10:00.000Z",
+    status: "success",
+  },
+  {
+    id: "txn_011",
+    amount: 89.0,
+    currency: "EUR",
+    createdAt: "2026-03-27T19:35:00.000Z",
+    status: "failed",
+  },
+  {
+    id: "txn_012",
+    amount: 12.49,
+    currency: "USD",
+    createdAt: "2026-03-11T07:00:00.000Z",
+    status: "success",
+  },
+];

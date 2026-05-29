@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Transactions Management Dashboard
 
-## Getting Started
+A small subscription management dashboard built with Next.js. Users can review their transaction history, download mock invoices, and retry failed payments in bulk.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js 16 with App Router and React Compiler enabled
+- React 19
+- TypeScript in strict mode
+- Tailwind CSS 4
+- TanStack Query for client-side data fetching and mutations
+- Zod for repository boundary validation
+- Sonner for toast notifications
+
+## Environment
+
+The demo data source is required for the mock assignment flow. Create a local environment file:
+
+```bash
+cp .env.example .env.local
+```
+
+Use this value in `.env.local`:
+
+```env
+NEXT_PUBLIC_DATA_SOURCE=demo
+```
+
+`NEXT_PUBLIC_DATA_SOURCE=api` is only a placeholder for a future backend and currently throws a clear "not implemented" error.
+
+## Running Locally
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The root route redirects to `/transactions`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev        # Start the development server
+npm run build      # Create a production build
+npm run start      # Start the production server
+npm run typecheck  # Run TypeScript checks
+npm run lint       # Run ESLint
+npm run format     # Format source files with Prettier
+```
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Transaction history table with transaction ID, amount, date, time, and status.
+- Mock invoice download with a 2-second generation delay and a success notification.
+- Failed transaction selection with checkboxes.
+- Bulk retry for selected failed payments.
+- Concurrent retry simulation with independent per-row loading states.
+- Random retry delay between 1 and 4 seconds with an 80% success rate.
+- Route-level and global error fallbacks.
